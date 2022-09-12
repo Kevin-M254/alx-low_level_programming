@@ -6,22 +6,10 @@
  */
 int main(void)
 {
-	int i;
-	int j;
+	char x;
 
-	for (i = 10; i <= 19; i++)
-	{
-		for (j = 10; j <= 19; j++)
-		{
-			putchar((i % 10) + '0');
-			putchar((j % 10) + '0');
-			if (i != 19 || j != 19)
-			{
-			putchar(',');
-			putchar(' ');
-			}
-		}
-	}
+	for (x = 'a'; x <= 'z'; x++)
+		putchar(x);
 	putchar('\n');
 	return (0);
 }
