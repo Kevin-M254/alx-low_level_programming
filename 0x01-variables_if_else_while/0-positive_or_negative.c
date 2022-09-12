@@ -5,9 +5,7 @@
 /**
  * main - entry point
  *
- * This program will assign a random number to the variable n each time it
- *
- * return: Always return 0 (Success)
+ * Return: Always return 0 (Success)
  */
 int main(void)
 {
