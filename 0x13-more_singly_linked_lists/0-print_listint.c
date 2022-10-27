@@ -2,8 +2,10 @@
 #include <stdio.h>
 
 /**
- * print_list - prints all the elements of a linked list
+ * print_listint - prints all the elements of a linked list
  * @h: head of linked list
+ * Description: Find all nodes in linked list
+ * and count all
  *
  * Return: No. of nodes in linked list.
  */
