@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * size_t listlist_len - get number of elements
+ * dlistlist_len - get number of elements
  * @h: header list
  *
  * Return: No. of elements.
