@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * dlistlist_len - get number of elements
+ * dlistint_len - get number of elements
  * @h: header list
  *
  * Return: No. of elements.
