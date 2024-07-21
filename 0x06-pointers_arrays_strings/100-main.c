@@ -4,7 +4,7 @@
 
 int main(void)
 {
-	char s[] = "life is awesome.\n";
+	char s[] = "One full sentence please\n";
 	char *p;
 
 	p = rot13(s);

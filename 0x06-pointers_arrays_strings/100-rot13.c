@@ -1,26 +1,36 @@
 #include "main.h"
 
-char *rot13(va_list l, flags_t *f)
+/**
+ *rot13 - encodes strings using rot13.
+ *@s: pointer to string.
+ *
+ *Return: pointer to encoded string.
+ */
+char *rot13(char *s)
 {
-	int i, j;
-	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	char ROT13[] = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	char *s = va_arg(l, char *);
+	int stringCount, rotate;
+	char x[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		     'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		     'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		     'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		     'Z'};
 
-	(void)f;
-	for (j = 0; s[j]; j++)
+	char y[] = {'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y',
+		     'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l',
+		     'm', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y',
+		     'Z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L',
+		     'M'};
+
+	for (stringCount = 0; s[stringCount] != '\0'; stringCount++)
 	{
-		if (s[j] < 'A' || (s[j] > 'Z' && s[j] < 'a') || s[j] > 'z')
-			_putchar(s[j]);
-		else
+		for (rotate = 0; rotate < 53; rotate++)
 		{
-			for (i = 0; i <= 52; i++)
+			if (x[rotate] == s[stringCount])
 			{
-				if (s[j] == rot13[i])
-					_putchar(ROT13[i]);
+				s[stringCount] = y[rotate];
+				break;
 			}
 		}
 	}
-
-	return (j);
+	return (s);
 }
